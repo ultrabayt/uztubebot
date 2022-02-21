@@ -52,7 +52,7 @@ Iltimos, istalgan utube video havolasini yuboring yoki @vid inline rejimidan foy
 ]);
 }
 
-if($text != "/start"){
+if($text != "/start" or "/tezlik"){
 $stm = round(microtime(true));
  $kuting = bot('sendMessage',[
 'chat_id'=>$chat_id,
@@ -63,9 +63,10 @@ $Bero1= json_decode(file_get_contents("http://darr.zzz.com.ua/api/Yt.php?url=".$
 $yt1= json_decode(file_get_contents("http://dilshod1643.jizzax.ru/yt.php?url=".$text),1);
 $title2= $yt1['Info']["title"];
 $Bero2= $Bero1["result"];
-bot('deletemessage',[
+bot('editmessagetext',[
 'chat_id'=>$chat_id,
 'message_id'=>$kuting,
+'text'=>"",
 ]);
 $okk = bot('sendvideo',[
 'chat_id'=>$chat_id,
