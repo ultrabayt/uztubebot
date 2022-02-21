@@ -52,7 +52,7 @@ Iltimos, istalgan utube video havolasini yuboring yoki @vid inline rejimidan foy
 ]);
 }
 
-if(preg_match('/(https|http)/',$text)){
+if(mb_stripos($text,"https://youtu.be/")!==false){
 $stm = round(microtime(true));
  $kuting = bot('sendMessage',[
 'chat_id'=>$chat_id,
