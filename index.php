@@ -73,6 +73,10 @@ $okk = bot('sendvideo',[
 if($okk->ok){
 $endt = round(microtime(true));
 $tims = $endt - $stm;
+bkt('deleteMessage',[
+'chat_id'=>$chat_id,
+'message_id'=>$mid
+]);
 bot('sendMessage',[
 'chat_id'=>$chat_id,
 'text'=>"🧭 $tims sekundda yuklandi!",
