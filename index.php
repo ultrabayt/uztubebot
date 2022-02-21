@@ -52,7 +52,8 @@ Iltimos, istalgan utube video havolasini yuboring yoki @vid inline rejimidan foy
 ]);
 }
 
-if($text != "/start" or $text != "/tezlik"){
+if($text != "/start"){
+if($text != "/tezlik"){
 $stm = round(microtime(true));
  $kuting = bot('sendMessage',[
 'chat_id'=>$chat_id,
@@ -86,6 +87,7 @@ bot('sendMessage',[
 'text'=>"Xatolik yuz berdi!",
 'parse_mode'=>"MarkDown",
 ]);
+}
 }
 }
 
