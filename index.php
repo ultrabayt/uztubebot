@@ -61,7 +61,7 @@ $stm = round(microtime(true));
 ])->result->message_id;
 $Bero1= json_decode(file_get_contents("http://darr.zzz.com.ua/api/Yt.php?url=".$text),1);
 $yt1= json_decode(file_get_contents("http://dilshod1643.jizzax.ru/yt.php?url=".$text),1);
-$title2= $yt1["title"];
+$title2= $yt1['Info']["title"];
 $Bero2= $Bero1["result"];
 $okk = bot('sendvideo',[
 'chat_id'=>$chat_id,
