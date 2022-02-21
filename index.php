@@ -54,19 +54,15 @@ Iltimos, istalgan utube video havolasini yuboring yoki @vid inline rejimidan foy
 
 if(preg_match('/(https|http)/',$text)){
 $stm = round(microtime(true));
-	bot('sendMessage',[
+ $kuting = bot('sendMessage',[
 'chat_id'=>$chat_id,
 'reply_to_message_id'=>$mid,
 'text'=>"Iltimos kuting. Yuklanmoqda!"
-]);
+])->result->message_id;
 $Bero1= json_decode(file_get_contents("http://darr.zzz.com.ua/api/Yt.php?url=".$text),1);
 $yt1= json_decode(file_get_contents("http://dilshod1643.jizzax.ru/yt.php?url=".$text),1);
 $title2= $yt1["title"];
 $Bero2= $Bero1["result"];
-bot('deleteMessage',[
-'chat_id'=>$chat_id,
-'message_id'=>$mid
-]);
 $okk = bot('sendvideo',[
 'chat_id'=>$chat_id,
 'reply_to_message_id'=>$mid,
@@ -83,9 +79,10 @@ bot('sendMessage',[
 'parse_mode'=>"MarkDown",
 ]);
 }else{
- bot('sendMessage',[
+ bot('editmessagetext',[
 'chat_id'=>$chat_id,
 'reply_to_message_id'=>$mid,
+'message_id'=>$kuting,
 'text'=>"Xatolik yuz berdi!",
 'parse_mode'=>"MarkDown",
 ]);
