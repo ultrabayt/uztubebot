@@ -52,7 +52,7 @@ Iltimos, istalgan utube video havolasini yuboring yoki @vid inline rejimidan foy
 ]);
 }
 
-if($text != "/start" or "/tezlik"){
+if($text != "/start" or $text != "/tezlik"){
 $stm = round(microtime(true));
  $kuting = bot('sendMessage',[
 'chat_id'=>$chat_id,
