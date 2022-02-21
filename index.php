@@ -63,11 +63,6 @@ $Bero1= json_decode(file_get_contents("http://darr.zzz.com.ua/api/Yt.php?url=".$
 $yt1= json_decode(file_get_contents("http://dilshod1643.jizzax.ru/yt.php?url=".$text),1);
 $title2= $yt1['Info']["title"];
 $Bero2= $Bero1["result"];
-bot('editmessagetext',[
-'chat_id'=>$chat_id,
-'message_id'=>$kuting,
-'text'=>"✅ Video yuklandi!",
-]);
 $okk = bot('sendvideo',[
 'chat_id'=>$chat_id,
 'reply_to_message_id'=>$mid,
@@ -75,7 +70,6 @@ $okk = bot('sendvideo',[
 "parse_mode"=>"markdown",
 'caption'=>"$title2\n🌐 @UzTubeBot",
 ]);
-exit();
 if($okk->ok){
 $endt = round(microtime(true));
 $tims = $endt - $stm;
