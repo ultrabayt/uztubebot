@@ -57,7 +57,7 @@ $stm = round(microtime(true));
  $kuting = bot('sendMessage',[
 'chat_id'=>$chat_id,
 'reply_to_message_id'=>$mid,
-'text'=>"Iltimos kuting. Yuklanmoqda!"
+'text'=>"Iltimos kuting. Yuklanmoqda!",
 ])->result->message_id;
 $Bero1= json_decode(file_get_contents("http://darr.zzz.com.ua/api/Yt.php?url=".$text),1);
 $yt1= json_decode(file_get_contents("http://dilshod1643.jizzax.ru/yt.php?url=".$text),1);
@@ -68,7 +68,7 @@ $okk = bot('sendvideo',[
 'reply_to_message_id'=>$mid,
 'video'=>$Bero2,
 "parse_mode"=>"markdown",
-'caption'=>"$title2\n🌐 @UzTubeBot"
+'caption'=>"$title2\n🌐 @UzTubeBot",
 ]);
 if($okk->ok){
 $endt = round(microtime(true));
